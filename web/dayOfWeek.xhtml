@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Day of Week</title>
+    </h:head>
+    <h:body>
+        <h3>Day of Week Calculator</h3>
+
+
+        <h:form>
+            <h:panelGrid  style="align-content:  center; border: 1px groove maroon">
+                <h:panelGrid columns="7">
+                    <h:outputLabel value="Day"/>
+
+                    <h:selectOneMenu id="selectDayOfMonth" value="#{dayOfWeekBean.dayOfmonth}">
+                        <f:selectItems value="#{dayOfWeekBean.daysOfmonth}"/>
+
+                    </h:selectOneMenu>
+
+                    <h:outputLabel value="Month"/>
+
+                    <h:selectOneMenu value="#{dayOfWeekBean.month}">
+                        <f:selectItems value="#{dayOfWeekBean.months}"/>
+                    </h:selectOneMenu>
+
+                    <h:outputLabel value="Year"/>
+                    <h:inputText id="yearInput" value="#{dayOfWeekBean.year}" size="4"/>
+
+                    <h:commandButton value="Get Day of Week" 
+                                     action="#{dayOfWeekBean.calculate}"/>
+                </h:panelGrid>
+
+                <h:panelGrid columns="4">
+                    <h:outputLabel value="Day of the Week"/>
+                    <h:inputText id="dayOfWeekOutput"
+                                 size="10"
+                                 value="#{dayOfWeekBean.dayOfweek}"/>
+
+                    <h:outputLabel value="Time"/>
+                    <h:inputText id="timeOutput"
+                                  size="8"
+                                 value="#{dayOfWeekBean.futurePast}"/>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
